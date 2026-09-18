@@ -37,7 +37,7 @@ SWEP.OriginalInfo = {
 SWEP.HoldType = "ar2"
 
 function SWEP:EmitFireSound(secondary)
-    self:EmitSound("Weapon_SG552.Single")
+    self:EmitSound("Weapon_M249.Single")
 end
 
 SWEP.BaseCone = 0.012
