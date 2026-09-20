@@ -253,9 +253,9 @@ function SWEP:PrimaryAttack()
     self:DoRecoil(false)
 
 	if not self.Primary.NoNextSecondaryFire then
-		self:SetNextSecondaryFire(CurTime() + self:GetFireDelay(false))
+		self:SetNextSecondaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(false))
 	end
-    self:SetNextPrimaryFire(CurTime() + self:GetFireDelay(false))
+    self:SetNextPrimaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(false))
 end
 
 function SWEP:PlayZoomSound()
@@ -283,9 +283,9 @@ function SWEP:SecondaryAttack_Shoot()
     self:DoRecoil(true)
 
 	if not self.Secondary.NoNextPrimaryFire then
-    	self:SetNextPrimaryFire(CurTime() + self:GetFireDelay(true))
+    	self:SetNextPrimaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(true))
 	end
-	self:SetNextSecondaryFire(CurTime() + self:GetFireDelay(true))
+	self:SetNextSecondaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(true))
 
     self.IdleAnimation = CurTime() + self:SeqDur(0.04)
 end

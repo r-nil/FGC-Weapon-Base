@@ -94,8 +94,8 @@ function SWEP:PrimaryAttack(second)
     end
     self:SetLastShootTime(CurTime())
 
-	self:SetNextSecondaryFire(CurTime() + self:GetFireDelay(false))
-    self:SetNextPrimaryFire(CurTime() + self:GetFireDelay(false))
+	self:SetNextSecondaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(false))
+    self:SetNextPrimaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(false))
 
     self.IdleAnimation = CurTime() + self:SeqDur()
 end

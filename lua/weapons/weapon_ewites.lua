@@ -94,8 +94,8 @@ function SWEP:PrimaryAttack()
     self:DoRecoil(false)
     self.ShootLeft = CurTime() + 0.2
 
-	self:SetNextSecondaryFire(CurTime() + self:GetFireDelay(false) * 0.5)
-    self:SetNextPrimaryFire(CurTime() + self:GetFireDelay(false))
+	self:SetNextSecondaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(false) * 0.5)
+    self:SetNextPrimaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(false))
 end
 
 function SWEP:CanSecondaryAttack()
@@ -124,8 +124,8 @@ function SWEP:SecondaryAttack()
     self:DoRecoil(true)
     self.ShootRight = CurTime() + 0.2
 
-    self:SetNextPrimaryFire(CurTime() + self:GetFireDelay(false) * 0.5)
-	self:SetNextSecondaryFire(CurTime() + self:GetFireDelay(false))
+    self:SetNextSecondaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(false))
+    self:SetNextPrimaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(false) * 0.5)
 
     self.IdleAnimation = CurTime() + self:SeqDur()
 end
