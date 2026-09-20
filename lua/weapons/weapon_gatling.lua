@@ -8,7 +8,7 @@ SWEP.WorldModel = "models/weapons/w_mach_m249para.mdl"
 SWEP.ShowViewModel = true
 SWEP.ShowWorldModel = true
 
-SWEP.RequiredClip = 1
+SWEP.RequiredClip = 2
 
 SWEP.Category = "FGC_phil"
 SWEP.Spawnable = true
