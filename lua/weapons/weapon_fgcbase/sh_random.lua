@@ -6,6 +6,7 @@ function SWEP:GetRandomSeed()
     return seed
 end
 
-function SWEP:GetRand(min,max)
-    return util.SharedRandom( "fgcrand_" .. self:GetRandomSeed(), min, max, CurTime())
+function SWEP:GetRand(min,max,s)
+    s = s or 0
+    return util.SharedRandom( "fgcrand_" .. self:GetRandomSeed(), min, max, CurTime() + s)
 end

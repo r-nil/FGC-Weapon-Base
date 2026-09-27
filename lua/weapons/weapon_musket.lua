@@ -71,5 +71,5 @@ SWEP.ReloadSpeed = 0.7
 function SWEP:DoRecoil()
     if not self:GetOwner():IsPlayer() then return end
 
-    self:GetOwner():ViewPunch(Angle(-self:GetRecoilMul() * 0.25 - 6, self:GetRand(-0.4,0.4),self:GetRand(-0.3,0.3)))
+    self:GetOwner():ViewPunch(Angle(-self:GetRecoilMul() * 0.25 - 6, self:GetRand(-0.4,0.4),self:GetRand(-0.3,0.3,1)))
 end

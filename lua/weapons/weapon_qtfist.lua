@@ -69,7 +69,7 @@ function SWEP:PrimaryAttack(right)
     local owner = self:GetOwner()
     owner:SetAnimation(PLAYER_ATTACK1)
     if owner:IsPlayer() then
-        owner:ViewPunch(Angle(self:GetRand(-0.1,0.3),self:GetRand(-0.4,0.4),0))
+        owner:ViewPunch(Angle(self:GetRand(-0.1,0.3),self:GetRand(-0.4,0.4,1),0))
     end
 end
 

@@ -65,7 +65,7 @@ SWEP.Ironsights_FOV = 9
 function SWEP:DoRecoil()
     if not self:GetOwner():IsPlayer() then return end
 
-    self:GetOwner():ViewPunch(Angle(-25, self:GetRand(-50,50),self:GetRand(-30,30)))
+    self:GetOwner():ViewPunch(Angle(-25, self:GetRand(-50,50),self:GetRand(-30,30,1)))
 end
 
 function SWEP:SecondaryAttack()

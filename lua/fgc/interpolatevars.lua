@@ -10,7 +10,6 @@ local function TIME_TO_TICK(t)
 	return floor(t / TICK_INTERVAL)
 end
 
-
 function FGCWEP_DefineInterpolatedVar(tab, keyName, getSetterName, defaultValue, bIsDTVar)
     local strGetUninterpolated = "GetUninterpolated" .. getSetterName
 	local strSetUninterpolated = "SetUninterpolated" .. getSetterName
