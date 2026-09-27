@@ -3,7 +3,7 @@ killicon.Render = function(x,y,name,alpha,deh,...)
     local wep = FGCWEP_WEAPONS_LOOKUP[name]
     if wep then
         if wep.FGCWEP_KilliconRender then
-            return wep.FGCWEP_killiconRender(x,y,name,alpha,deh,...)
+            return wep.FGCWEP_KilliconRender(x,y,name,alpha,deh,...)
         end
         local info = wep.OriginalInfo
 
@@ -32,6 +32,10 @@ FGCWEP_OldkilliconGetSize = FGCWEP_OldkilliconGetSize or killicon.GetSize
 killicon.GetSize = function(name,deh,...)
     local wep = FGCWEP_WEAPONS_LOOKUP[name]
     if wep then
+        if wep.FGCWEP_KilliconGetSize then
+            return wep.FGCWEP_KilliconGetSize(name,deh,...)
+        end
+
 		surface.SetFont("ChatFont")
         local w,h = surface.GetTextSize(wep.PrintName)
         h = h * 2
