@@ -493,6 +493,11 @@ function SWEP:SendMatchingSequence(anim)
 end
 
 function SWEP:OnReloaded()
+
+	timer.Create("fgcwep_reloaded",0.1,1,function()
+		FGCWEP_REFRESH_WEAPONS()
+	end)
+
 	if CLIENT then return end
 	local owner = self:GetOwner()
 	if owner:IsPlayer() then

@@ -81,7 +81,6 @@ function SWEP:DrawCrosshairCross()
 		local p = ang:Up() * midarea
 		DrawLine(math.Round(x + p.y), math.Round(y + p.z), ang.roll, math.max(1,CrossHairScale * 1.4))
 	end
-
 end
 
 function SWEP:DrawCrosshairDot()

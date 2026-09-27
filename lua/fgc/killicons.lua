@@ -6,7 +6,6 @@ killicon.Render = function(x,y,name,alpha,deh,...)
             return wep.FGCWEP_KilliconRender(x,y,name,alpha,deh,...)
         end
         local info = wep.OriginalInfo
-
         local author,authorclr = nil,Color(255,255,255)
         if info.category and FGCWEP_KNOWNMEMBERS[info.category] then
             local e = FGCWEP_KNOWNMEMBERS[info.category]

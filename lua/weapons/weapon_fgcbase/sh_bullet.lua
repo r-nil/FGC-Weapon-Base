@@ -37,6 +37,7 @@ function SWEP:GetBulletDir(interpolate)
         dir = dir + self:GetOwner():GetViewPunchAngles()
     end
 
+    dir:Normalize()
     dir = dir:Forward()
     dir:Normalize()
     return dir

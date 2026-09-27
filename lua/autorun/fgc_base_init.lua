@@ -151,7 +151,7 @@ FGCWEP_WEAPONS_LOOKUP = {}
 FGCWEP_REFRESH_WEAPONS = function()
     table.Empty(FGCWEP_WEAPONS)
     for i, SWEP in ipairs(weapons.GetList()) do
-        SWEP = weapons.Get(SWEP.ClassName)
+        SWEP = setmetatable(weapons.GetStored(SWEP.ClassName),{__index = weapons.Get(SWEP.ClassName)})
         if SWEP and SWEP.FGC and SWEP.Spawnable then
             table.insert(FGCWEP_WEAPONS,SWEP)
             FGCWEP_WEAPONS_LOOKUP[SWEP.ClassName] = SWEP
