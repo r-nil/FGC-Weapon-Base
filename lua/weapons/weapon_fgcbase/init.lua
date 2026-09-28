@@ -4,7 +4,7 @@ fgc_incl("cl_init.lua")
 function SWEP:AnimThink() end
 
 function SWEP:GetNPCRestTimes()
-    return self:GetConeAdder() * 1,self:GetConeAdder() * 1
+    return self:GetConeAdder() * 0,self:GetConeAdder() * 1
 end
 
 function SWEP:GetNPCBurstSettings()
