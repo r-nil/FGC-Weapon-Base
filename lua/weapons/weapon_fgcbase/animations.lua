@@ -326,15 +326,15 @@ if CLIENT then
 				end
 
 				if v.surpresslightning then render.SuppressEngineLighting(true) end
-				render.SetColorModulation(v.color.r / 255, v.color.g / 255, v.color.b / 255)
+					render.SetColorModulation(v.color.r / 255, v.color.g / 255, v.color.b / 255)
 
-				if v.color.a > 0 and v.color.a < 255 then render.OverrideColorWriteEnable( true, false ) end
-				if v.renderoverride then
-					v.renderoverride(model,self)
-				else
-					model:DrawModel()
+					if v.color.a > 0 and v.color.a < 255 then
+					if v.renderoverride then
+						v.renderoverride(model,self)
+					else
+						model:DrawModel()
+					end
 				end
-				if v.color.a > 0 and v.color.a < 255 then render.OverrideColorWriteEnable( false, false ) end
 
 				render.SetBlend(v.color.a/255 * (v.alphamul or 1))
 				local real_clip_count = 0
