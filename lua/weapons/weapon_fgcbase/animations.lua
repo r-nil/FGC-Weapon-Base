@@ -35,7 +35,7 @@ function SWEP:Anim_Initialize()
 		self:CreateModels(self.WElements) -- create worldmodels
 		-- init view model bone build function
 		local owner = getown(self)
-		if IsValid(owner) then
+		if IsValid(owner) and owner.GetViewModel then
 			local vm = owner:GetViewModel()
 			if IsValid(vm) then
 				self:ResetBonePositions(vm)
