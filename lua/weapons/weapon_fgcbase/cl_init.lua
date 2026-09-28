@@ -65,11 +65,11 @@ function SWEP:TranslateFOV(fov)
 	return fov
 end
 
-local ratio = GetConVar("zoom_sensitivity_ratio")
+--local ratio = GetConVar("zoom_sensitivity_ratio")
 function SWEP:AdjustMouseSensitivity()
-	if self:GetIronsights() then 
-        return (self.PlyOriginalFOV / (1 + self:GetIronsightsDeltaMultiplier() * self.Ironsights_FOV)) / self.PlyOriginalFOV * ratio:GetFloat()
-    end
+	--if self:GetIronsights() then 
+        --return (self.PlyOriginalFOV / (1 + self:GetIronsightsDeltaMultiplier() * self.Ironsights_FOV)) / self.PlyOriginalFOV * ratio:GetFloat()
+    --end
 end
 
 SWEP.bLastIron = false
