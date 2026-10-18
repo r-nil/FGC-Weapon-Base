@@ -283,9 +283,9 @@ function SWEP:SecondaryAttack_Shoot()
     self:DoRecoil(true)
 
 	if not self.Secondary.NoNextPrimaryFire then
-    	self:SetNextPrimaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(true))
+    	self:SetNextPrimaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(true))
 	end
-	self:SetNextSecondaryFire(math.max(self:GetNextPrimaryFire(),CurTime()) + self:GetFireDelay(true))
+	self:SetNextSecondaryFire(math.max(self:GetNextSecondaryFire(),CurTime()) + self:GetFireDelay(true))
 
     self.IdleAnimation = CurTime() + self:SeqDur(0.04)
 end
