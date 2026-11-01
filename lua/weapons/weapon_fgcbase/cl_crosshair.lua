@@ -62,9 +62,9 @@ local function DrawLine(x, y, rot, w)
 	surface.DrawTexturedRectRotated(x, y, 14 * w, 2 * THICKNESS, rot)
 end
 
-function SWEP:DrawCrosshairCross()
+function SWEP:DrawCrosshairCross(cone)
 	local x,y = self:GetCrosshairPos()
-	local cone = self:GetCone() / 90
+	local cone = cone or (self:GetCone() / 90)
 
 	if cone <= 0 then return end
 
