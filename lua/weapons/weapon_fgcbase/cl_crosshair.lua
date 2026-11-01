@@ -75,7 +75,7 @@ function SWEP:DrawCrosshairCross()
 
 	local midarea = 40 * CrossHairScale
 
-	local ang = Angle(0, 0, 0)
+	local ang = Angle(0, 0, self.CrosshairRotation or 0)
 	for i=0, 359, 360 / 4 do
         ang.roll = ang.roll + i
 		local p = ang:Up() * midarea
