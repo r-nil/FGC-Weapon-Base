@@ -65,6 +65,8 @@ SWEP.SlotPos = 4
 SWEP.Tracer = "ToolTracer"
 SWEP.HullSize = 1
 
+SWEP.JCMS_COSTOVERRIDE = 300
+
 function SWEP:DoRecoil()
     if not self:GetOwner():IsPlayer() then return end
 

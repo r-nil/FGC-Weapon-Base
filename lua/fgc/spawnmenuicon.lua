@@ -115,6 +115,7 @@ spawnmenu.CreateContentIcon = function(type,parent,data)
                     self:LayoutEntity(self.Entity)
                     local ang = self.aLookAngle
                     if not ang then ang = (self.vLookatPos - self.vCamPos):Angle() end
+
                     cam.Start3D(self.vCamPos, ang, self.fFOV, x, y, w, h, 5, self.FarZ)
                     render.SuppressEngineLighting(true)
                     render.SetLightingOrigin(self.Entity:GetPos())
@@ -193,6 +194,12 @@ spawnmenu.CreateContentIcon = function(type,parent,data)
                         self.Border = 0
                         self:OnDepressionChanged(false)
                     end
+                end
+
+                if wep.FGCWEP_LOCKED then
+                    surface.SetDrawColor(255,0,0)
+                    surface.SetMaterial(gradup)
+                    surface.DrawTexturedRect(3 + self.Border, 3 + self.Border, w - self.Border * 2 - 6, h - self.Border * 2 - 6)
                 end
 
                 self.Image:SetPos(3 + self.Border, 3 + self.Border / 2)

@@ -20,6 +20,8 @@ SWEP.SlotPos = 30
 
 SWEP.ComboResetTime = 0.1
 
+SWEP.JCMS_COSTOVERRIDE = 30000
+
 function SWEP:MeleeCallback(att,tr,dmg,anim)
     dmg:SetDamage(self.HitDamage)
 

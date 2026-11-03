@@ -63,6 +63,8 @@ SWEP.AimCrouchMul = 0.2
 SWEP.Slot = 4
 SWEP.SlotPos = 3
 
+SWEP.JCMS_COSTOVERRIDE = 1000
+
 function SWEP:DoRecoil() end
 
 function SWEP:ShootBullets(dmg,num,cone,secondary)

@@ -34,6 +34,8 @@ SWEP.MeleeRange = 750
 SWEP.MeleeDelay = 0.0004
 SWEP.SwingTime = 0
 
+SWEP.JCMS_COSTOVERRIDE = 30000
+
 function SWEP:EmitFireSound(hit)
     if hit then
         self:EmitSound("Weapon_Crowbar.Melee_Hit")

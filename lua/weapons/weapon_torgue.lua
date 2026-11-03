@@ -30,6 +30,7 @@ function SWEP:MeleeCallback(att,tr,dmg,anim)
     ent:Spawn()
     ent:SetKeyValue("iMagnitude","70")
     ent:Fire("Explode",0,0)
+    ent:Fire("kill",0,0)
     ent:EmitSound("ambient/explosions/explode_9.wav",400)
     ent.FGCWEP_ForceWeapon = self
 end

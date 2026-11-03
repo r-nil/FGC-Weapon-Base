@@ -20,6 +20,8 @@ SWEP.SlotPos = 30
 
 SWEP.ComboResetTime = 0.1
 
+SWEP.JCMS_COSTOVERRIDE = 1500
+
 function SWEP:MeleeCallback(att,tr,dmg,anim)
     dmg:SetDamage(self.HitDamage)
     
@@ -32,6 +34,7 @@ function SWEP:MeleeCallback(att,tr,dmg,anim)
     ent:SetKeyValue("iMagnitude","1999")
     ent:Fire("Explode",0,0)
     ent:EmitSound("ambient/explosions/explode_9.wav",400)
+    ent:Fire("kill",0,0)
 end
 
 function SWEP:SendFireAnim(right)

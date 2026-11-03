@@ -112,8 +112,17 @@ function FGCWEP_PrintWeaponInfo(self,x,y,alpha,store,center,max)
                 .. FGCWEP_DISCORDS
                 .. FGCWEP_COCONUTCLR
                 .. info.server .. ": "
-                ..  FGCWEP_TEXTCLR
+                .. FGCWEP_TEXTCLR
                 .. FGCWEP_KNOWNSERVERS[info.server]
+                .. "</color>\n"
+        end
+
+        if self.FGCWEP_LOCKED then
+            str =
+                str .. "<color=255,0,0,255>"
+                .. "[LOCKED] "
+                .. FGCWEP_TEXTCLR
+                .. "this weapon cannot be spawned"
                 .. "</color>\n"
         end
 

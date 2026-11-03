@@ -15,8 +15,8 @@ SWEP.OriginalInfo = {
 
 SWEP.ComboCount = 1
 
-SWEP.MeleeComboDamage = 65
-SWEP.MeleeDamage = 3
+SWEP.MeleeComboDamage = 100000
+SWEP.MeleeDamage = 50000
 SWEP.MeleeInaccurate = 0
 SWEP.MeleeSize = 10
 SWEP.MeleeRange = 96
@@ -27,6 +27,8 @@ SWEP.Slot = 0
 SWEP.SlotPos = 50
 
 SWEP.ComboResetTime = 0.1
+
+SWEP.JCMS_COSTOVERRIDE = 30000
 
 function SWEP:MeleeCallback(_,_,dmg,anim)
     if anim == "fists_uppercut" then
