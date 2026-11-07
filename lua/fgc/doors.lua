@@ -70,6 +70,7 @@ elseif SERVER then
 
     hook.Add("PlayerDisconnected", "FGCsv_doorsunown", function(ply)
         local steamid = ply:SteamID64()
+        if not doors[steamid] then return end
         for i,v in pairs(doors[steamid]) do
             if IsValid(i) and v then
                 SetDoorOwner(i, nil)
